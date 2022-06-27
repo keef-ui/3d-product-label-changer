@@ -37,5 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 Resources
 
+Adding argtypes and controls
+--------------------------
 Controls : https://storybook.js.org/docs/react/essentials/controls#gatsby-focus-wrapper
 args argtypes: https://storybook.js.org/docs/react/writing-stories/args#gatsby-focus-wrapper
