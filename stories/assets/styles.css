@@ -1,0 +1,17 @@
+.main {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "    .      preview preview preview preview preview preview     .  ";
+
+}
+
+.preview {
+    grid-area: preview;
+    height: 100vh;
+}
+
