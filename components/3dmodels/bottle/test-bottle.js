@@ -2,8 +2,6 @@ import { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, PerspectiveCamera } from "@react-three/drei";
 
-//https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st
-
 export default function Bottle({ ...props }) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/bottle/vegandream-label.gltf");
@@ -23,7 +21,7 @@ export default function Bottle({ ...props }) {
         />
       </group>
       <group
-        position={[-0.01, 0.02, -0.22]}
+        position={props.mposition}
         rotation={[-1.93, -0.03, -2.75]}
         scale={1}
       >
@@ -66,5 +64,3 @@ export default function Bottle({ ...props }) {
     </group>
   );
 }
-
-
