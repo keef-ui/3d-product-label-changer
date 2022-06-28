@@ -14,7 +14,7 @@ export default {
 // export const BottlePreview = () => <ShowModel camPosition={[0,80,130]} ><Bottle /></ShowModel>
 const Template = (args) => <div className="main"><div className="preview"><ShowModel {...args} ><Bottle /></ShowModel></div></div>
 export const BottlePreview = Template.bind({});
-BottlePreview.args={camPosition:[100,60,100]}
+BottlePreview.args={camPosition:[100,60,100],cx:10}
 
 
 

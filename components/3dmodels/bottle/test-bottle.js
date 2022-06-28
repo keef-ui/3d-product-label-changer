@@ -21,7 +21,7 @@ export default function Bottle({ ...props }) {
         />
       </group>
       <group
-        position={props.mposition}
+        position={[props.modelPosX,props.modelPosY,props.modelPosZ]}
         rotation={[-1.93, -0.03, -2.75]}
         scale={1}
       >

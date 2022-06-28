@@ -17,7 +17,7 @@ export default function ShowModel({children,...props}) {
           {children}
           <PerspectiveCamera
             makeDefault
-            position={[props.cx, props.camPosition[1], props.camPosition[2]]}
+            position={[props.camPosX, props.camPosY, props.camPosZ]}
           />
           <OrbitControls />
         </Canvas>

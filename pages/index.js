@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PreviewModel from "../components/3dmodels/previewBottle" 
 import ShowModel from "../components/3dmodels/show-model";
-import Bottle from "../components/3dmodels/bottle";
+import Bottle from "../components/3dmodels/bottle/test-bottle";
 import styles from "../styles/Home.module.css";
 import Router from "next/router";
 
@@ -35,6 +35,10 @@ export default function Home(props) {
     Router.reload();
   };
 
+  const camPosition = { camPosX: 0, camPosY: 100, camPosZ: 150 };
+  const modelPosition = { modelPosX: 0, modelPosY: -50, modelPosZ: 10 };
+
+
   return (
     <div className={styles.main}>
       <img className={styles.upload} src={createObjectURL} />
@@ -50,7 +54,9 @@ export default function Home(props) {
         </button>
       </div>
       <div className={styles.preview}>
-        <ShowModel camPosition={[0,120,80]}><Bottle /></ShowModel>
+        <ShowModel {...camPosition}>
+          <Bottle {...modelPosition} />
+        </ShowModel>
       </div>
     </div>
   );
