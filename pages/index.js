@@ -11,6 +11,7 @@ import Router from "next/router";
 export default function Home(props) {
   const [image, setImage] = useState(0);
   const [createObjectURL, setCreateObjectURL] = useState(null);
+  const [snapShot,setSnapShot] = useState(false)
 
   const uploadToClient = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -38,6 +39,10 @@ export default function Home(props) {
   const camPosition = { camPosX: 0, camPosY: 100, camPosZ: 150 };
   const modelPosition = { modelPosX: 0, modelPosY: -50, modelPosZ: 10 };
 
+  const takeSnapShot = () =>{
+   console.log('Set snashot state to true ....')
+   setSnapshot(true)
+  }
 
   return (
     <div className={styles.main}>
@@ -54,9 +59,14 @@ export default function Home(props) {
         </button>
       </div>
       <div className={styles.preview}>
-        <ShowModel {...camPosition}>
+        <ShowModel setSnap={setSnapShot} snapState={snapShot} {...camPosition}>
           <Bottle {...modelPosition} />
         </ShowModel>
+      </div>
+      <div className={styles.snapshot}>
+        <button className={styles.large} type="submit" onClick={takeSnapShot}>
+          Take snapshot
+        </button>
       </div>
     </div>
   );

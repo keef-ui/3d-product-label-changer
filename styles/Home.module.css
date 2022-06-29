@@ -6,7 +6,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   grid-template-areas: 
@@ -17,7 +17,7 @@
 
 }
 
-.preview{grid-area: preview;height: 100vh;}
+.preview{grid-area: preview;height: 90vh;}
 .upload{grid-area: upload;width:80vh;}
 .uploadBtns { grid-area: uploadBtns;}
 .snapshot{grid-area: snapshot;}
@@ -38,5 +38,10 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
+}
+
+button.large {
+  display:block;
+  width:100%;
 }
 
