@@ -1,12 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useThree } from "@react-three/fiber";
 import PreviewModel from "../components/3dmodels/previewBottle" 
 import ShowModel from "../components/3dmodels/show-model";
-import Bottle from "../components/3dmodels/bottle/test-bottle";
+import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
 import Router from "next/router";
+import snapShotHelper from "../components/3dmodels/helpers/takeSnap";
+
 
 // push to here --> https://github.com/keef-ui/upload-demo
 
+
+function TakeSnapShot({ snapShot, setSnapShot }) {
+  const gl = useThree((state) => state.gl);
+  useEffect(() => {
+    if (snapShot) {
+      console.log("Clicked.....");
+    
+      snapShotHelper(gl);
+      setSnapShot(false);
+    }
+  }, [snapShot, setSnapShot]);
+  return null;
+}
 
 export default function Home(props) {
   const [image, setImage] = useState(0);
@@ -39,14 +55,19 @@ export default function Home(props) {
   const camPosition = { camPosX: 0, camPosY: 100, camPosZ: 150 };
   const modelPosition = { modelPosX: 0, modelPosY: -50, modelPosZ: 10 };
 
-  const takeSnapShot = () =>{
-   console.log('Set snashot state to true ....')
-   setSnapshot(true)
+  const handleSnapShot = () =>{
+   console.log('Set snapshot state to true ....')
+   setSnapShot(true)
   }
+
+
 
   return (
     <div className={styles.main}>
-      <img className={styles.upload} src={createObjectURL} />
+      <div className={styles.upload}>
+        <img className={styles.img} src={createObjectURL} />
+        </div>
+      
       <div className={styles.uploadBtns}>
         <h4>Select Image</h4>
         <input type="file" name="myImage" onChange={uploadToClient} />
@@ -59,12 +80,13 @@ export default function Home(props) {
         </button>
       </div>
       <div className={styles.preview}>
-        <ShowModel setSnap={setSnapShot} snapState={snapShot} {...camPosition}>
+        <ShowModel {...camPosition}>
           <Bottle {...modelPosition} />
+          <TakeSnapShot setSnapShot={setSnapShot} snapShot={snapShot} />
         </ShowModel>
       </div>
       <div className={styles.snapshot}>
-        <button className={styles.large} type="submit" onClick={takeSnapShot}>
+        <button className={styles.large} type="submit" onClick={handleSnapShot}>
           Take snapshot
         </button>
       </div>

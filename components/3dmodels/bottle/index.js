@@ -2,13 +2,18 @@ import { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, PerspectiveCamera } from "@react-three/drei";
 
-//https://drei.pmnd.rs/?path=/story/performance-adaptive--adaptive-scene-st
+/*
+* Renders a 3D bottle using imported GLTF model using useGLTF hook
+* 
+* Accepts input for X,Y,Z position for the 3D bottle :  modelPosX, modelPosY, modelPosZ
+*
+*/
 
-export default function Bottle({ ...props }) {
+export default function Bottle({ modelPosX, modelPosY, modelPosZ}) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/bottle/vegandream-label.gltf");
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} dispose={null}>
       <group
         position={[0, 0.16, 0.25]}
         rotation={[-Math.PI / 2, 0, 0.17]}
@@ -23,7 +28,7 @@ export default function Bottle({ ...props }) {
         />
       </group>
       <group
-        position={[-0.01, 0.02, -0.22]}
+        position={[modelPosX, modelPosY, modelPosZ]}
         rotation={[-1.93, -0.03, -2.75]}
         scale={1}
       >
@@ -66,5 +71,3 @@ export default function Bottle({ ...props }) {
     </group>
   );
 }
-
-

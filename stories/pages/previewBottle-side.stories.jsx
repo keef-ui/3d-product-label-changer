@@ -1,15 +1,15 @@
 // /stories/pages/home.stories.jsx
 
-import Bottle from "../../components/3dmodels/bottle/test-bottle";
+import Bottle from "../../components/3dmodels/bottle";
 import ShowModel from "../../components/3dmodels/show-model";
 import "../assets/styles.css"
 
-let slider ={ control: { type: 'range', min: -100, max: 500, step: 3 } };
-
+//Define Argtype for a slider so that we can resue it for cam positions
+const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
   
 
 export default {
-  title: "models/ModelPreview-v2",
+  title: "models/ModelPreview-side",
   component: ShowModel,
   subcomponents: { Bottle },
   argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
@@ -24,7 +24,7 @@ const Template = (args) => <div className="main">
                             </div>
 
 export const BottlePreview = Template.bind({});
-BottlePreview.args={ camPosX:0,camPosY:100,camPosZ:150 ,  modelPosX: 0, modelPosY: -50, modelPosZ: 10}
+BottlePreview.args={ camPosX:240,camPosY:100,camPosZ:150 ,  modelPosX: 0, modelPosY: -50, modelPosZ: 10}
 
 
 
