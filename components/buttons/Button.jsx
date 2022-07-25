@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './button.css';
+import styles from './Button.module.css';
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const primarySecondary = primary ? 'primary' : 'secondary';
+  const mode = props.disabled ? 'disabled' : primarySecondary ;
+  const isDisabled = mode ? 'disabled' : ''
+  
+
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={ `${styles.button} ${styles[size]} ${styles[mode]}`}
       style={backgroundColor && { backgroundColor }}
+     
       {...props}
-    >
-      {label}
+    > 
+      {label} {props.children}
     </button>
   );
 };
@@ -46,5 +51,5 @@ Button.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',
-  onClick: undefined,
+  onClick: undefined
 };

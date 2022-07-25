@@ -8,8 +8,7 @@ import { useGLTF, PerspectiveCamera, OrbitControls} from '@react-three/drei'
 //----------------------
 // camPosition:   is array value for the  position of perspective camera 
 // children : The pass through child components
-
-//Resources: 
+// Resources: 
 // Snapshot: https://codesandbox.io/s/basic-demo-forked-rnuve?file=/src/App.js:1540-1580
 
 
