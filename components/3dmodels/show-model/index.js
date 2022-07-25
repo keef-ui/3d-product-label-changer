@@ -1,7 +1,7 @@
 import { useEffect, useRef,useState } from "react"
 import {Canvas , useThree } from "@react-three/fiber"
 import { useGLTF, PerspectiveCamera, OrbitControls} from '@react-three/drei'
-// import SnapShotButton from "../helpers/snapshot"  <--- NOT USED ANY MORE use taksnap helper
+
 
 
 // ShowModel properties:

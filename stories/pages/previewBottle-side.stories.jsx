@@ -28,13 +28,6 @@ BottlePreview.args={ camPosX:240,camPosY:100,camPosZ:150 ,  modelPosX: 0, modelP
 
 
 
-//Using
-//👇 We create a “template” of how args map to rendering
-// const Template = (args) => <Button {...args} />;
-
-// 👇 Each story then reuses that template
-// export const Primary = Template.bind({});
-// Primary.args = { backgroundColor: '#ff0', label: 'Button' };
-
+//Notes:
 //Controls : https://storybook.js.org/docs/react/essentials/controls#gatsby-focus-wrapper
 //args argtypes: https://storybook.js.org/docs/react/writing-stories/args#gatsby-focus-wrapper
