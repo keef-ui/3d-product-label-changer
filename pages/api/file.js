@@ -16,9 +16,9 @@ const post = async (req, res) => {
 };
 
 const saveFile = async (file) => {
-  //TODO: rename file as as :
-  //muscle-m-choclate-p-Butter-2kgpng&muscle-m-choclate-p-Butter-2kgpng_alpha.png
-  //folder ./public/model/
+  //We are just saving the new file with a fixed  name:
+  //"muscle-m-choclate-p-Butter-2kgpng&muscle-m-choclate-p-Butter-2kgpng_alpha.png"
+  // We are using a fixed name because of the GLTF model has this name embedded in it so cannot be changed!
 
   const data = fs.readFileSync(file.filepath);
   fs.writeFileSync(
@@ -43,10 +43,8 @@ export default (req, res) => {
 
 
 
-//
-//  changed file.path to file.filepath ---- this line --->  const data = fs.readFileSync(file.filepath);
-//   ... and this line--->   await fs.unlinkSync(file.filepath);
-// Next trouble shoot sending response
+// NOTES for future developement
+// Following is research and notes for my refrence only can delete in production:
 // blog ref: https://betterprogramming.pub/upload-files-to-next-js-with-api-routes-839ce9f28430
 //
 //  File details object after parsing

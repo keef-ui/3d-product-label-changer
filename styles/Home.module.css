@@ -11,11 +11,11 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   grid-template-areas: 
-        "upload     upload     preview preview preview preview preview preview"
-        "upload     upload     preview preview preview preview preview preview"
-        " uploadBtns uploadBtns     preview preview preview preview preview preview"
-        "   .    . snapshot snapshot snapshot snapshot snapshot snapshot";
-        padding:0.5rem;
+        "upload      upload          preview preview preview preview preview preview"
+        "upload      upload          preview preview preview preview preview preview"
+        " uploadBtns uploadBtns      preview preview preview preview preview preview"
+        "   .            .           snapshot snapshot snapshot snapshot snapshot snapshot";
+  padding:0.5rem;
 
 }
 

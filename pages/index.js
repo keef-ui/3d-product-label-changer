@@ -20,7 +20,7 @@ function TakeSnapShot({ snapShot, setSnapShot }) {
       console.log("Taking snapshot...check download folder for new image");
 
       snapShotHelper(webglDom);
-      //Set the state bake to "file-selected"
+      //Set the state back to "file-selected"
       setSnapShot(SNAPSHOT_STATES[1]);
     }
   }, [snapShot, setSnapShot]);
