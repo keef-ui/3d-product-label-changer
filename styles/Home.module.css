@@ -42,6 +42,9 @@
   width:100%;
   height: auto;
 }
+.uploadBtnContainer {
+  height: 5rem;
+}
 
 /* .parent {
   display: grid;
@@ -66,3 +69,7 @@ button.large {
   height: 100%;
 }
 
+.btnIcon {
+  display:inline-block;
+  padding-right:0.5rem;
+}

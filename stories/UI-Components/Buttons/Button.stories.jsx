@@ -46,3 +46,9 @@ Wide.args = {
   label: 'Button',
 };
 
+export const Wide2 = Template.bind({});
+Wide2.args = {
+  size: 'wide2',
+  label: 'Button',
+};
+

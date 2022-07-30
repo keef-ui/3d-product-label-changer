@@ -8,7 +8,7 @@ import styles from './Button.module.css';
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const primarySecondary = primary ? 'primary' : 'secondary';
   const mode = props.disabled ? 'disabled' : primarySecondary ;
-  const isDisabled = mode ? 'disabled' : ''
+  // const isDisabled = mode ? 'disabled' : ''
   
 
   return (
@@ -36,7 +36,7 @@ Button.propTypes = {
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large','wide']),
+  size: PropTypes.oneOf(['small', 'medium', 'large','wide','wide2']),
   /**
    * Button contents
    */

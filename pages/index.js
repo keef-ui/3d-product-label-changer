@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { faSearch,faRotate,faCamera } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { useThree } from "@react-three/fiber";
 import { Button } from "../components/buttons/Button";
 import ShowModel from "../components/3dmodels/show-model";
@@ -72,9 +74,17 @@ export default function Home(props) {
       <div className={styles.uploadBtns}>
         <h4>Up Load New Label</h4>
         <input type="file" name="myImage" onChange={fileSelect} />
-        <Button onClick={uploadToServer} type="submit">
-          Change Label
-        </Button>
+        <div className={styles.uploadBtnContainer}>
+          <Button
+            onClick={uploadToServer}
+            type="submit"
+            disabled={snapShot === "blank" ? "disabled" : ""}
+            size="wide"
+          >
+            <span className={styles.btnIcon}><FontAwesomeIcon icon={faRotate}></FontAwesomeIcon></span>
+            Change Label
+          </Button>
+        </div>
       </div>
       <div className={styles.preview}>
         <ShowModel {...camPosition}>
@@ -83,8 +93,8 @@ export default function Home(props) {
         </ShowModel>
       </div>
       <div className={styles.snapshot}>
-        <Button onClick={handleSnapShot} type="submit" size="wide">
-          Take Snapshot
+        <Button onClick={handleSnapShot} type="submit" size="wide2" primary>
+          <span className={styles.btnIcon}><FontAwesomeIcon icon={faCamera}></FontAwesomeIcon></span>Take Snapshot
         </Button>
       </div>
     </div>
