@@ -8,7 +8,7 @@ import styles from './Button.module.css';
 export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
   const primarySecondary = primary ? 'primary' : 'secondary';
   const mode = props.disabled ? 'disabled' : primarySecondary ;
-  // const isDisabled = mode ? 'disabled' : ''
+  // ToDo: Do we need 'label' as a prop?
   
 
   return (

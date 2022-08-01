@@ -52,3 +52,18 @@ Wide2.args = {
   label: 'Button',
 };
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+  size: 'wide',
+  label: 'Button',
+  disabled:'disabled'
+
+};
+
+export const PrimaryWideBottom = Template.bind({});
+PrimaryWideBottom.args = {
+  size: 'wide2',
+  label: 'Button',
+   primary: true
+
+};

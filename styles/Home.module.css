@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 0.5rem;
   grid-row-gap: 0px;
   grid-template-areas: 
         "upload      upload          preview preview preview preview preview preview"
@@ -20,7 +20,7 @@
 }
 
 .preview{grid-area: preview;height: 88vh;}
-.upload{grid-area: upload;height:50vh;}
+.upload{grid-area: upload;height:50vh;position: relative;}
 .snapshot{grid-area: snapshot;height: 9vh}
 .uploadBtns {
   grid-area: uploadBtns;
@@ -44,6 +44,20 @@
 }
 .uploadBtnContainer {
   height: 5rem;
+}
+
+.upload:before {
+  position: absolute;
+  height: 96%;
+  width: 100%;
+  content: "Select an image file";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(225, 223, 223);
+  z-index:-10;
+  padding: 2.5rem;
 }
 
 /* .parent {

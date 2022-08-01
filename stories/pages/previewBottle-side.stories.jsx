@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
   
 
 export default {
-  title: "models/ModelPreview-side",
+  title: "models/Canister-Preview-side",
   component: ShowModel,
   subcomponents: { Bottle },
   argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
