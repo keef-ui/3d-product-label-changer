@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the 
 import { faSearch,faRotate,faCamera } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { useThree } from "@react-three/fiber";
 import { Button } from "../components/buttons/Button";
-import ShowModel from "../components/3dmodels/show-model";
+import ShowModelEnvironment from "../components/3dmodels/show-model-environment";
 import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
 import Router from "next/router";
@@ -94,10 +94,10 @@ export default function Home(props) {
         </div>
       </div>
       <div className={styles.preview}>
-        <ShowModel {...camPosition}>
+        <ShowModelEnvironment {...camPosition}>
           <Bottle {...modelPosition} />
           <TakeSnapShot setSnapShot={setSnapShot} snapShot={snapShot} />
-        </ShowModel>
+        </ShowModelEnvironment>
       </div>
       <div className={styles.snapshot}>
         <Button onClick={handleSnapShot} type="submit" size="wide2" primary>

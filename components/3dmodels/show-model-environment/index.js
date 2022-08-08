@@ -34,12 +34,12 @@ export default function ShowModel({ children, ...props }) {
           {/* Ceiling light */}
           <Lightformer
             intensity={0.75}
-            rotation-x={Math.PI / 12}
+            rotation-x={Math.PI / 1}
             position={[0, 5, -9]}
             scale={[20, 10, 20]}
           />
           <Lightformer
-            intensity={0.75}
+            intensity={0.3}
             rotation-x={Math.PI / 3}
             position={[10, 5, 10]}
             scale={[50, 50, 20]}
