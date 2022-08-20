@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import WineBottle from "../../components/3dmodels/wine";
-import ShowModel from "../../components/3dmodels/show-model-environment";
+import ShowModel from "../../components/3dmodels/show/show-model-environment";
 import "../assets/styles.css"
 
 const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
   
 
 export default {
-  title: "models/WineBottle-Preview-environment",
+  title: "3dmodels/wine-bottle/WineBottle-Preview-environment",
   component: ShowModel,
   subcomponents: { WineBottle },
    argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
@@ -23,8 +23,8 @@ const Template = (args) => <div className="main">
                               </div>
                             </div>
 
-export const WineBottlePreview = Template.bind({});
-WineBottlePreview.args={ camPosX:240,camPosY:100,camPosZ:50 ,  modelPosX: -4.25, modelPosY: -62.06, modelPosZ: 5.9}
+export const WineBottlePreviewWithShapeLights = Template.bind({});
+WineBottlePreviewWithShapeLights.args={ camPosX:240,camPosY:100,camPosZ:50 ,  modelPosX: -4.25, modelPosY: -62.06, modelPosZ: 5.9}
 
 
 

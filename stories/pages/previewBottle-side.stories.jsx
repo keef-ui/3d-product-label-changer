@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import Bottle from "../../components/3dmodels/bottle";
-import ShowModel from "../../components/3dmodels/show-model";
+import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css"
 
 //Define Argtype for a slider so that we can resue it for cam positions
@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
   
 
 export default {
-  title: "models/Canister-Preview-side",
+  title: "3dmodels/Canister/Canister-Preview-side",
   component: ShowModel,
   subcomponents: { Bottle },
   argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}

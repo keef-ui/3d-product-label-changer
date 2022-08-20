@@ -1,30 +1,30 @@
 // /stories/pages/home.stories.jsx
 
-import Bottle from "../../components/3dmodels/bottle";
-import ShowModel from "../../components/3dmodels/show/show-model";
+import WineBottle from "../../components/3dmodels/wine";
+import ShowModel from "../../components/3dmodels/show/show-model-preset-environment";
 import "../assets/styles.css"
 
-const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
+const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
 
   
 
 export default {
-  title: "3dmodels/Canister/Canister-Preview-front",
+  title: "3dmodels/wine-bottle/WineBottle-Preview-Preset-environment",
   component: ShowModel,
-  subcomponents: { Bottle },
-  argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
+  subcomponents: { WineBottle },
+   argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
 };
 
 const Template = (args) => <div className="main">
                               <div className="preview">
                                   <ShowModel camPosX={args.camPosX} camPosY={args.camPosY} camPosZ={args.camPosZ} camPosition={args.camPosition} >
-                                    <Bottle modelPosX={args.modelPosX} modelPosY={args.modelPosY} modelPosZ={args.modelPosZ}/>
+                                    <WineBottle modelPosX={args.modelPosX} modelPosY={args.modelPosY} modelPosZ={args.modelPosZ} />
                                   </ShowModel>
                               </div>
                             </div>
 
-export const BottlePreview = Template.bind({});
-BottlePreview.args={ camPosX:0,camPosY:100,camPosZ:150 ,  modelPosX: 0, modelPosY: -50, modelPosZ: 10}
+export const WineBottlePreviewWithPresetLights = Template.bind({});
+WineBottlePreviewWithPresetLights.args={ camPosX:240,camPosY:100,camPosZ:50 ,  modelPosX: -4.25, modelPosY: -62.06, modelPosZ: 5.9}
 
 
 

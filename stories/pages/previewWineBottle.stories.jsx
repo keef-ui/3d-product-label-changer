@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import WineBottle from "../../components/3dmodels/wine";
-import ShowModel from "../../components/3dmodels/show-model";
+import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css"
 
 const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
   
 
 export default {
-  title: "models/WineBottle-Preview",
+  title: "3dmodels/wine-bottle/WineBottle-Preview",
   component: ShowModel,
   subcomponents: { WineBottle },
    argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}

@@ -18,9 +18,9 @@ export default function ShowModel({ children, ...props }) {
 
   return (
     <>
-      <Canvas gl={{ preserveDrawingBuffer: true }}>
+      <Canvas shadows gl={{ preserveDrawingBuffer: true }}>
         <ambientLight />
-        <pointLight position={[50, 10, 50]} />
+        <pointLight position={[50, 10, 50]} />        
         {children}
         <PerspectiveCamera
           makeDefault

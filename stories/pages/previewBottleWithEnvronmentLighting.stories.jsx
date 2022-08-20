@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import Bottle from "../../components/3dmodels/bottle";
-import ShowModel from "../../components/3dmodels/show-model-environment";
+import ShowModel from "../../components/3dmodels/show/show-model-environment";
 import "../assets/styles.css"
 
 const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 3 } };
   
 
 export default {
-  title: "models/Canister-Preview-with-environment",
+  title: "3dmodels/Canister/Canister-Preview-with-environment",
   component: ShowModel,
   subcomponents: { Bottle },
   argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
@@ -26,7 +26,8 @@ const Template = (args) => <div className="main">
 export const BottlePreview = Template.bind({});
 BottlePreview.args={ camPosX:0,camPosY:100,camPosZ:150 ,  modelPosX: 0, modelPosY: -50, modelPosZ: 10}
 
-
+//Example for background lighting image https://codesandbox.io/s/lwo219?file=/src/App.js
+// for alternative reflection light see video https://www.youtube.com/watch?v=coc0DxZtMKc
 
 //Using
 //👇 We create a “template” of how args map to rendering
