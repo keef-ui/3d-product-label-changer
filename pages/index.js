@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the 
 import { faSearch,faRotate,faCamera } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { useThree } from "@react-three/fiber";
 import { Button } from "../components/buttons/Button";
-import ShowModelEnvironment from "../components/3dmodels/show-model-environment";
+import ShowModelEnvironment from "../components/3dmodels/show/show-model-environment";
 import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
 import Router from "next/router";

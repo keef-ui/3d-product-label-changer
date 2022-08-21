@@ -30,7 +30,11 @@ export default function ShowModel({ children, ...props }) {
           position={[props.camPosX, props.camPosY, props.camPosZ]}
         />
         <OrbitControls />
-        <Environment frames={Infinity} resolution={256} preset="lobby" />
+        <Environment
+          frames={Infinity}
+          resolution={256}
+          preset={props.envPreset}
+        />
       </Canvas>
     </>
   );
@@ -48,3 +52,5 @@ export default function ShowModel({ children, ...props }) {
 //   park: 'rooitou/rooitou_park_1k.hdr',
 //   lobby: 'st-fagans/st_fagans_interior_1k.hdr',
 // }
+
+  // sunset,dawn,night,warehouse,forest,apartment,studio,city,park,lobby

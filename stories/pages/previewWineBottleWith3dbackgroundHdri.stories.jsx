@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import WineBottle from "../../components/3dmodels/wine";
-import ShowModel from "../../components/3dmodels/show/show-model-3dbackground";
+import ShowModel from "../../components/3dmodels/show/show-model-3dbackground-hdri";
 import "../assets/styles.css"
 
 const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
@@ -9,7 +9,7 @@ const slider = { control: { type: 'range', min: -100, max: 500, step: 0.1 } };
   
 
 export default {
-  title: "3dmodels/wine-bottle/WineBottle-Preview-3dbackground",
+  title: "3dmodels/wine-bottle/WineBottle-Preview-3dbackgroundHdri",
   component: ShowModel,
   subcomponents: { WineBottle },
    argTypes: { camPosX: slider , camPosY:slider ,camPosZ:slider , modelPosX:slider,modelPosY:slider,modelPosZ:slider}
@@ -23,8 +23,9 @@ const Template = (args) => <div className="main">
                               </div>
                             </div>
 
-export const WineBottlePreview = Template.bind({});
-WineBottlePreview.args={ camPosX:240,camPosY:100,camPosZ:50 ,  modelPosX: -4.25, modelPosY: -62.06, modelPosZ: 5.9}
+export const WineBottlePreviewHdri = Template.bind({});
+WineBottlePreviewHdri
+.args={ camPosX:240,camPosY:100,camPosZ:50 ,  modelPosX: -4.25, modelPosY: -62.06, modelPosZ: 5.9}
 
 
 //Example for background lighting image https://codesandbox.io/s/lwo219?file=/src/App.js
