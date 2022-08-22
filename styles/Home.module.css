@@ -13,32 +13,32 @@
   grid-template-areas: 
         "upload      upload          preview preview preview preview preview preview"
         "upload      upload          preview preview preview preview preview preview"
-        " uploadBtns uploadBtns      preview preview preview preview preview preview"
+        " labelUploadForm labelUploadForm      preview preview preview preview preview preview"
         "   .            .           snapshot snapshot snapshot snapshot snapshot snapshot";
   padding:0.5rem;
 
 }
 
-.preview{grid-area: preview;height: 88vh;}
-.upload{grid-area: upload;height:50vh;position: relative;}
+.scenePreview{grid-area: preview;height: 88vh;}
+.uploadedLabelPreview{grid-area: upload;height:50vh;position: relative;}
 .snapshot{grid-area: snapshot;height: 9vh}
-.uploadBtns {
-  grid-area: uploadBtns;
+.labelUploadForm {
+  grid-area: labelUploadForm;
   display:flex;
   flex-direction:column;
   padding: 0 1rem;
 
 }
 
-.uploadBtns h4 {
+.labelUploadForm h4 {
   font-size: 1.3rem;
 }
 
-.uploadBtns > * {
+.labelUploadForm > * {
   padding: 1rem 0;
 }
 
-.upload img {
+.uploadedLabelPreview img {
   width:100%;
   height: auto;
 }
@@ -46,7 +46,7 @@
   height: 5rem;
 }
 
-.upload:before {
+.uploadedLabelPreview:before {
   position: absolute;
   height: 96%;
   width: 100%;

@@ -70,11 +70,11 @@ export default function Home(props) {
 
   return (
     <div className={styles.main}>
-      <div className={styles.upload}>
+      <div className={styles.uploadedLabelPreview}>
         <img className={styles.img} src={imageUrl} />
       </div>
 
-      <div className={styles.uploadBtns}>
+      <div className={styles.labelUploadForm}>
         <h4>CHANGE LABEL</h4>
         <input type="file" name="myImage" onChange={fileSelect} />
         <div className={styles.uploadBtnContainer}>
@@ -93,7 +93,7 @@ export default function Home(props) {
           </Button>
         </div>
       </div>
-      <div className={styles.preview}>
+      <div className={styles.scenePreview}>
         <ShowModelEnvironment {...camPosition}>
           <Bottle {...modelPosition} />
           <TakeSnapShot setSnapShot={setSnapShot} snapShot={snapShot} />
