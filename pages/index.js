@@ -2,7 +2,9 @@ import { useEffect, useState,useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faSearch,faRotate,faCamera } from "@fortawesome/free-solid-svg-icons"; // import the icons you need
 import { useThree } from "@react-three/fiber";
-import { Button } from "../components/buttons/Button";
+import { Button } from "../components/ui/buttons/Button";
+import Layout from "../components/layouts/main-basic/MainBasic";
+import LabelPreview from "../components/ui/label-preview/LabelPreview";
 import ShowModelEnvironment from "../components/3dmodels/show/show-model-environment";
 import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
@@ -69,11 +71,8 @@ export default function Home(props) {
   };
 
   return (
-    <div className={styles.main}>
-      <div className={styles.uploadedLabelPreview}>
-        <img className={styles.img} src={imageUrl} />
-      </div>
-
+    <Layout>
+      <LabelPreview imageUrl={imageUrl} />
       <div className={styles.labelUploadForm}>
         <h4>CHANGE LABEL</h4>
         <input type="file" name="myImage" onChange={fileSelect} />
@@ -107,6 +106,6 @@ export default function Home(props) {
           Take Snapshot
         </Button>
       </div>
-    </div>
+    </Layout>
   );
 }

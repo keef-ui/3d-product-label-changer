@@ -20,7 +20,6 @@
 }
 
 .scenePreview{grid-area: preview;height: 88vh;}
-.uploadedLabelPreview{grid-area: upload;height:50vh;position: relative;}
 .snapshot{grid-area: snapshot;height: 9vh}
 .labelUploadForm {
   grid-area: labelUploadForm;
@@ -38,35 +37,11 @@
   padding: 1rem 0;
 }
 
-.uploadedLabelPreview img {
-  width:100%;
-  height: auto;
-}
 .uploadBtnContainer {
   height: 5rem;
 }
 
-.uploadedLabelPreview:before {
-  position: absolute;
-  height: 96%;
-  width: 100%;
-  content: "Select an image file";
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  background-color: rgb(225, 223, 223);
-  z-index:-10;
-  padding: 2.5rem;
-}
 
-/* .parent {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-} */
 
 .footer {
   display: flex;

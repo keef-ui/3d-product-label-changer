@@ -1,0 +1,22 @@
+.uploadedLabelPreview {
+    grid-area: upload;
+    position: relative;
+}
+.uploadedLabelPreview img {
+    width: 100%;
+    height: auto;
+}
+
+.uploadedLabelPreview:before {
+    position: absolute;
+    height: 96%;
+    width: 100%;
+    content: "Select an image file";
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(225, 223, 223);
+    z-index: -10;
+    padding: 2.5rem;
+}

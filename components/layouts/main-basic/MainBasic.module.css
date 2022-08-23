@@ -1,0 +1,15 @@
+.mainBaisc {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "upload      upload          preview preview preview preview preview preview"
+        "upload      upload          preview preview preview preview preview preview"
+        " labelUploadForm labelUploadForm      preview preview preview preview preview preview"
+        "   .            .           snapshot snapshot snapshot snapshot snapshot snapshot";
+    padding: 0.5rem;
+
+}
