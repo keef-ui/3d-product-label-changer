@@ -5,10 +5,10 @@ import { useThree } from "@react-three/fiber";
 import { Button } from "../components/ui/buttons/Button";
 import Layout from "../components/layouts/main-basic/MainBasic";
 import LabelPreview from "../components/ui/label-preview/LabelPreview";
+import LabelUploadForm from "../components/ui/label-upload-form/LabelUploadForm";
 import ShowModelEnvironment from "../components/3dmodels/show/show-model-environment";
 import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
-import Router from "next/router";
 import snapShotHelper from "../components/3dmodels/helpers/takeSnap";
 
 // push to here --> https://github.com/keef-ui/upload-demo
@@ -40,29 +40,6 @@ export default function Home(props) {
   const camPosition = { camPosX: 0, camPosY: 100, camPosZ: 150 }; //Camera position
   const modelPosition = { modelPosX: 0, modelPosY: -50, modelPosZ: 10 }; //3d Model position
 
-  const fileSelect = (event) => {
-    // Handle file select on client side
-    // ToDo: Needs some validation for acceptable file types
-    if (event.target.files && event.target.files[0]) {
-      const file = event.target.files[0];
-
-      setImage(file);
-      setImageUrl(URL.createObjectURL(file));
-      setSnapShot(SNAPSHOT_STATES[1]);
-    }
-  };
-
-  const uploadToServer = async (event) => {
-    //Handle form upload. Makes a REST call to "/api/file" 
-    const body = new FormData();
-    body.append("file", image);
-    const response = await fetch("/api/file", {
-      method: "POST",
-      body,
-    });
-    console.log("File upload Status: " + response.statusText);
-    Router.reload();
-  };
 
   const handleSnapShot = () => {
     console.log("Set snapshot state to create-image ....");
@@ -73,25 +50,15 @@ export default function Home(props) {
   return (
     <Layout>
       <LabelPreview imageUrl={imageUrl} />
-      <div className={styles.labelUploadForm}>
-        <h4>CHANGE LABEL</h4>
-        <input type="file" name="myImage" onChange={fileSelect} />
-        <div className={styles.uploadBtnContainer}>
-          <Button
-            onClick={uploadToServer}
-            type="submit"
-            disabled={snapShot === "blank" ? "disabled" : ""}
-            size="wide"
-            primary
-            s
-          >
-            <span className={styles.btnIcon}>
-              <FontAwesomeIcon icon={faRotate}></FontAwesomeIcon>
-            </span>
-            Change
-          </Button>
-        </div>
-      </div>
+      <LabelUploadForm
+        setImage={setImage}
+        setImageUrl={setImageUrl}
+        setSnapShot={setSnapShot}
+        snapShot={snapShot}
+        SNAPSHOT_STATES={SNAPSHOT_STATES}
+        image={image}
+      />
+
       <div className={styles.scenePreview}>
         <ShowModelEnvironment {...camPosition}>
           <Bottle {...modelPosition} />
