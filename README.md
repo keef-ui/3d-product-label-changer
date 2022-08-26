@@ -1,3 +1,6 @@
+View site at : https://3d-product-label-changer.vercel.app/
+storybook: https://storybook-3d-product-label-changer.vercel.app/
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
