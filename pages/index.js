@@ -58,7 +58,7 @@ export default function Home(props) {
         SNAPSHOT_STATES={SNAPSHOT_STATES}
         image={image}
       />
-
+      
       <div className={styles.scenePreview}>
         <ShowModelEnvironment {...camPosition}>
           <Bottle {...modelPosition} />
