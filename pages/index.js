@@ -4,7 +4,7 @@ import { faSearch,faRotate,faCamera } from "@fortawesome/free-solid-svg-icons"; 
 import { useThree } from "@react-three/fiber";
 import { Button } from "../components/ui/buttons/Button";
 import Layout from "../components/layouts/main-basic/MainBasic";
-import LabelPreview from "../components/ui/label-preview/LabelPreview";
+import LabelPreview from "../components/layouts/label-preview/LabelPreview";
 import LabelUploadPanel from "../components/layouts/label-upload-panel/LabelUploadPanel";
 import LabelUploadForm from "../components/ui/label-upload-form/LabelUploadForm";
 import ShowModelEnvironment from "../components/3dmodels/show/show-model-environment";

@@ -1,0 +1,38 @@
+.label {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(156, 163, 155);
+    display: flex;
+        justify-content: center;
+        align-items: center;
+
+}
+
+.upload {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(134, 135, 141);
+        display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+.preview {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(80, 75, 80);
+        display: flex;
+            justify-content: center;
+            align-items: center;
+}
+
+.narrow {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(13, 12, 12);
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+}
+

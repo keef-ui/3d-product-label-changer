@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import Bottle from "../../components/3dmodels/bottle";
-import ShowModel from "../../components/3dmodels/show/show-model";
+import ShowModel from "../../components/3dmodels/show/show-model-environment";
 import "../assets/styles.css"
 
 //Define Argtype for a slider so that we can resue it for cam positions
