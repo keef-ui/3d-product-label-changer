@@ -1,0 +1,4 @@
+.scenePreview {
+    grid-area: preview;
+    height: 88vh;
+}

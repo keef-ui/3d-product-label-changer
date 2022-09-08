@@ -5,11 +5,14 @@ import { useThree } from "@react-three/fiber";
 import { Button } from "../components/ui/buttons/Button";
 import Layout from "../components/layouts/main-basic/MainBasic";
 import LabelPreview from "../components/ui/label-preview/LabelPreview";
+import LabelUploadPanel from "../components/layouts/label-upload-panel/LabelUploadPanel";
 import LabelUploadForm from "../components/ui/label-upload-form/LabelUploadForm";
 import ShowModelEnvironment from "../components/3dmodels/show/show-model-environment";
 import Bottle from "../components/3dmodels/bottle/";
 import styles from "../styles/Home.module.css";
 import snapShotHelper from "../components/3dmodels/helpers/takeSnap";
+import ScenePreviewPanel from "../components/layouts/scene-preview-panel/ScenePreviewPanel";
+import NarrowFooterPanel from "../components/layouts/narrow-footer-panel/NarrowFooterPanel"
 
 // push to here --> https://github.com/keef-ui/upload-demo
 
@@ -49,30 +52,33 @@ export default function Home(props) {
 
   return (
     <Layout>
-      <LabelPreview imageUrl={imageUrl} />
-      <LabelUploadForm
-        setImage={setImage}
-        setImageUrl={setImageUrl}
-        setSnapShot={setSnapShot}
-        snapShot={snapShot}
-        SNAPSHOT_STATES={SNAPSHOT_STATES}
-        image={image}
-      />
-      
-      <div className={styles.scenePreview}>
+      <LabelPreview>
+        <img className={styles.img} src={imageUrl} />
+      </LabelPreview>
+      <LabelUploadPanel>
+        <LabelUploadForm
+          setImage={setImage}
+          setImageUrl={setImageUrl}
+          setSnapShot={setSnapShot}
+          snapShot={snapShot}
+          SNAPSHOT_STATES={SNAPSHOT_STATES}
+          image={image}
+        />
+      </LabelUploadPanel>
+      <ScenePreviewPanel>
         <ShowModelEnvironment {...camPosition}>
           <Bottle {...modelPosition} />
           <TakeSnapShot setSnapShot={setSnapShot} snapShot={snapShot} />
         </ShowModelEnvironment>
-      </div>
-      <div className={styles.snapshot}>
-        <Button onClick={handleSnapShot} type="submit" size="wide2" primary>
-          <span className={styles.btnIcon}>
-            <FontAwesomeIcon icon={faCamera}></FontAwesomeIcon>
-          </span>
-          Take Snapshot
-        </Button>
-      </div>
+      </ScenePreviewPanel>
+      <NarrowFooterPanel>
+          <Button onClick={handleSnapShot} type="submit" size="wide2" primary>
+            <span className={styles.btnIcon}>
+              <FontAwesomeIcon icon={faCamera}></FontAwesomeIcon>
+            </span>
+            Take Snapshot
+          </Button>
+      </NarrowFooterPanel>
     </Layout>
   );
 }

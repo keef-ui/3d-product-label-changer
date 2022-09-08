@@ -1,0 +1,4 @@
+.narrowFooter {
+    grid-area: snapshot;
+    height: 9vh
+}

@@ -1,18 +1,3 @@
-.labelUploadForm {
-  grid-area: labelUploadForm;
-  display: flex;
-  flex-direction: column;
-  padding: 0 1rem;
-
-}
-
-.labelUploadForm h4 {
-  font-size: 1.3rem;
-}
-
-.labelUploadForm>* {
-  padding: 1rem 0;
-}
 
 .uploadBtnContainer {
   height: 5rem;

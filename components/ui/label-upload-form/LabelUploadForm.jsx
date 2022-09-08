@@ -31,8 +31,8 @@ export default function LabelUploadForm(props) {
   };
 
   return (
-    <div className={styles.labelUploadForm}>
-      <h4>CHANGE LABEL</h4>
+    <>
+      <h4 className={styles.h4}>CHANGE LABEL</h4>
       <input type="file" name="myImage" onChange={fileSelect} />
       <div className={styles.uploadBtnContainer}>
         <Button
@@ -49,7 +49,7 @@ export default function LabelUploadForm(props) {
           Change
         </Button>
       </div>
-    </div>
+    </>
   );
 }
 

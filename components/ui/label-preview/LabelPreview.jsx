@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./LabelPreview.module.css";
 
-export default function LabelPreview({ imageUrl,props }) {
+export default function LabelPreview({ children,props }) {
   return (
     <div className={styles.uploadedLabelPreview}>
-      <img className={styles.img} src={imageUrl} />
+      {children}
     </div>
   );
 }
