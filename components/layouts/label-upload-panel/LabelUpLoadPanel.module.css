@@ -14,4 +14,14 @@
     padding: 1rem 0;
 }
 
+.end {
+    align-items: end;
+}
 
+.center {
+    align-items: center;
+}
+
+.start {
+    align-items: start;
+}

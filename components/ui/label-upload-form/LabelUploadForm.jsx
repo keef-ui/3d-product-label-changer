@@ -41,7 +41,6 @@ export default function LabelUploadForm(props) {
           disabled={props.snapShot === "blank" ? "disabled" : ""}
           size="wide"
           primary
-          s
         >
           <span className={styles.btnIcon}>
             <FontAwesomeIcon icon={faRotate}></FontAwesomeIcon>

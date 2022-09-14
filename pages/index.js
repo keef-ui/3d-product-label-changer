@@ -55,7 +55,7 @@ export default function Home(props) {
       <LabelPreview>
         <img className={styles.img} src={imageUrl} />
       </LabelPreview>
-      <LabelUploadPanel>
+      <LabelUploadPanel align='stretch'>
         <LabelUploadForm
           setImage={setImage}
           setImageUrl={setImageUrl}

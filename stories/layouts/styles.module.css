@@ -19,11 +19,12 @@
 
 .preview {
     height: 100%;
-    width: 100%;
-    background-color: rgb(80, 75, 80);
-        display: flex;
+    width: 100%;   
+    display: flex;
             justify-content: center;
             align-items: center;
+    background-image: radial-gradient(#0c2ee3, #1111ce, transparent);
+    background-color: rgb(19, 28, 77);
 }
 
 .narrow {
