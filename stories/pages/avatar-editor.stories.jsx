@@ -7,6 +7,7 @@ import styles from "../layouts/styles.module.css";
 import Avatar from "../../components/3dmodels/avatar";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import { CirclePicker} from "react-color";
+import {ColorPicker} from "../../components/ui/color-picker/ColorPicker";
 
 export default {
   title: "Pages/AvatarEditor",
@@ -27,11 +28,8 @@ export const MainLayout = () => (
     <LabelPreview>
       <div className={styles.label}>Label Preview</div>
     </LabelPreview>
-    <LabelUploadPanel align='center'>
-      
-        <h3>Colour Changer</h3>
-        <CirclePicker />
-     
+    <LabelUploadPanel align="center">
+      <ColorPicker />
     </LabelUploadPanel>
     <ScenePreviewPanel>
       <div className={styles.preview}>

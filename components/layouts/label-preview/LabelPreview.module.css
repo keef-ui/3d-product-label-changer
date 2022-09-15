@@ -1,6 +1,9 @@
 .uploadedLabelPreview {
     grid-area: upload;
     position: relative;
+    display: flex;
+    flex-direction: row;
+    
 }
 .uploadedLabelPreview img {
     width: 100%;

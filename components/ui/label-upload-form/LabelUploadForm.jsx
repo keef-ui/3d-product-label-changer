@@ -30,6 +30,8 @@ export default function LabelUploadForm(props) {
     }
   };
 
+  //TODO: Use previous state to solve  button momentarily disaling when snapshot is taken
+  //Example here: https://blog.logrocket.com/accessing-previous-props-state-react-hooks/
   return (
     <>
       <h4 className={styles.h4}>CHANGE LABEL</h4>

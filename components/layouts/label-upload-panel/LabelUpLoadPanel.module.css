@@ -10,8 +10,8 @@
     font-size: 1.3rem;
 }
 
-.labelUploadForm>* {
-    padding: 1rem 0;
+.labelUploadForm>h3 {
+    padding: 0.5rem 0 0.5rem 0;
 }
 
 .end {
@@ -25,3 +25,4 @@
 .start {
     align-items: start;
 }
+

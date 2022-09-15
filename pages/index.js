@@ -53,9 +53,9 @@ export default function Home(props) {
   return (
     <Layout>
       <LabelPreview>
-        <img className={styles.img} src={imageUrl} />
+        {imageUrl&&<img className={styles.img} src={imageUrl} />}
       </LabelPreview>
-      <LabelUploadPanel align='stretch'>
+      <LabelUploadPanel align="stretch">
         <LabelUploadForm
           setImage={setImage}
           setImageUrl={setImageUrl}
@@ -72,12 +72,12 @@ export default function Home(props) {
         </ShowModelEnvironment>
       </ScenePreviewPanel>
       <NarrowFooterPanel>
-          <Button onClick={handleSnapShot} type="submit" size="wide2" primary>
-            <span className={styles.btnIcon}>
-              <FontAwesomeIcon icon={faCamera}></FontAwesomeIcon>
-            </span>
-            Take Snapshot
-          </Button>
+        <Button onClick={handleSnapShot} type="submit" size="wide2" primary>
+          <span className={styles.btnIcon}>
+            <FontAwesomeIcon icon={faCamera}></FontAwesomeIcon>
+          </span>
+          Take Snapshot
+        </Button>
       </NarrowFooterPanel>
     </Layout>
   );
