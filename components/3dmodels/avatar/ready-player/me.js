@@ -1,9 +1,12 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Model({ modelPosX, modelPosY, modelPosZ }) {
+export default function Model({ modelPosX, modelPosY, modelPosZ, color}) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/models/avatar/avatar.glb");
+
+  useEffect(()=>console.log(color))
+  
   return (
     <group
       ref={group}
@@ -26,18 +29,19 @@ export default function Model({ modelPosX, modelPosY, modelPosZ }) {
         geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
         material={materials.Wolf3D_Outfit_Bottom}
         skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
-        material-color={"green"}
+        material-color={"red"}
       />
       <skinnedMesh
         geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
         material={materials.Wolf3D_Outfit_Footwear}
         skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
-        s
+        
       />
       <skinnedMesh
         geometry={nodes.Wolf3D_Outfit_Top.geometry}
         material={materials.Wolf3D_Outfit_Top}
         skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
+        material-color={color&&color}
       />
       <skinnedMesh
         name="EyeLeft"

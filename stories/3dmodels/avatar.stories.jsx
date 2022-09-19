@@ -1,6 +1,6 @@
 // /stories/pages/home.stories.jsx
 
-import Avatar from "../../components/3dmodels/avatar";
+import Avatar from "../../components/3dmodels/avatar/ready-player/me";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css";
 

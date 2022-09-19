@@ -5,14 +5,14 @@ import ScenePreviewPanel from "../../components/layouts/scene-preview-panel/Scen
 import NarrowFooterPanel from "../../components/layouts/narrow-footer-panel/NarrowFooterPanel";
 import LabelPreview from "../../components/layouts/label-preview/LabelPreview";
 import styles from "../layouts/styles.module.css";
-import Avatar from "../../components/3dmodels/avatar/ready-player/me";
+import Avatar from "../../components/3dmodels/avatar/ready-player/custom-avatar";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import { CirclePicker} from "react-color";
 import {ColorPicker} from "../../components/ui/color-picker/ColorPicker";
 
 
 export default {
-  title: "Pages/AvatarEditor",
+  title: "Pages/AvatarCustomiser",
   component: Layout,
   subcomponents: {
     LabelPreview,
