@@ -43,7 +43,7 @@ export const LaptopPreview = Template.bind({});
 LaptopPreview.args = {
   camPosX: 0,
   camPosY: 0,
-  camPosZ: 3,
+  camPosZ: 30,
   modelPosX: 0,
   modelPosY: -0.9,
   modelPosZ: 0,
