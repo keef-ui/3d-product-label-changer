@@ -1,6 +1,6 @@
 import ShowModel from "../../../components/3dmodels/show/show-model";
 import "../../assets/styles.css";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 
@@ -20,24 +20,31 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <div className="main">
-    <div className="preview">
-      <ShowModel
-        camPosX={args.camPosX}
-        camPosY={args.camPosY}
-        camPosZ={args.camPosZ}
-        camPosition={args.camPosition}
-      >
-        <Laptop
-          modelPosX={args.modelPosX}
-          modelPosY={args.modelPosY}
-          modelPosZ={args.modelPosZ}
-        />
-      </ShowModel>
-    </div>
-  </div>
-);
+const Template = (args) => { 
+  const [isOpen, setIsOpen] = useState(false);
+  
+  return (
+          <div className="main">
+            <div className="preview" onClick={() => setIsOpen(!isOpen)}>
+              <ShowModel
+                camPosX={args.camPosX}
+                camPosY={args.camPosY}
+                camPosZ={args.camPosZ}
+                camPosition={args.camPosition}
+              >
+                <Laptop
+                  modelPosX={args.modelPosX}
+                  modelPosY={args.modelPosY}
+                  modelPosZ={args.modelPosZ}
+                  isOpen={isOpen}
+                  set={setIsOpen}
+                />
+              </ShowModel>
+              
+            </div>
+          </div>
+      )
+};
 
 export const LaptopPreview = Template.bind({});
 LaptopPreview.args = {
@@ -50,17 +57,30 @@ LaptopPreview.args = {
 };
 
 
-function Laptop({ modelPosX, modelPosY, modelPosZ}) {
-    const group = useRef();
+function Laptop({ modelPosX, modelPosY, modelPosZ, isOpen}) {
+    
 
-    const { nodes, materials } = useGLTF("/models/laptop/laptop-7.glb");
+    const { nodes, materials } = useGLTF("/models/laptop/laptop-test.glb");
     //Closed position for laptop is  rotation={[(105 * Math.PI) / 180, 0, 0]}  position={[0, 108,- 67]}
+    const variants = {
+      open: { rotateX: (1 * Math.PI) / 180, x: 0, y: 0, z: 0},
+      closed: { rotateX: (105 * Math.PI) / 180, x: 0, y: 108, z: -67 },
+    };
+ 
     return (
-      <group ref={group} dispose={null}>
-        <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
+      <group dispose={null}>
+        <group
+          position={[0, -0.12, 2.29]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={0.03}
+        >
           <motion.group
             scale={3.37}
-            animate={{ rotateX: (105 * Math.PI) / 180 , x:0, y:108, z:-67 }}
+            // animate={{ rotateX: (105 * Math.PI) / 180 , x:0, y:108, z:-67 }}
+            initial={"closed"}
+            animate={isOpen ? "open" : "closed"}
+            variants={variants}
+            transition={{ duration: 1 }}
           >
             <mesh
               geometry={nodes.Screen.geometry}
@@ -101,3 +121,58 @@ function Laptop({ modelPosX, modelPosY, modelPosZ}) {
       </group>
     );
   }
+
+
+
+
+      // <group {...props} dispose={null}>
+      //   <group
+      //     position={[0, -0.12, 2.29]}
+      //     rotation={[-Math.PI / 2, 0, 0]}
+      //     scale={0.03}
+      //   >
+      //     <motion.group
+      //       scale={3.37}
+      //       // animate={{ rotateX: (105 * Math.PI) / 180 , x:0, y:108, z:-67 }}
+      //       initial={"closed"}
+      //       animate={isOpen ? "open" : "closed"}
+      //       variants={variants}
+      //       transition={{duration:1}}
+      //     >
+      //       <mesh
+      //         geometry={nodes.Screen.geometry}
+      //         material={materials["Screen 1"]}
+      //         scale={0.3}
+      //       />
+      //       <mesh
+      //         geometry={nodes.Black_Inset.geometry}
+      //         material={materials["Display Rim"]}
+      //         scale={0.3}
+      //       />
+      //       <mesh
+      //         geometry={nodes.Rubber.geometry}
+      //         material={materials["Display Rubber"]}
+      //         scale={0.3}
+      //       />
+      //       <mesh
+      //         geometry={nodes.Screen_Back.geometry}
+      //         material={materials["Body 1"]}
+      //         scale={0.3}
+      //       />
+      //     </motion.group>
+      //     <mesh
+      //       geometry={nodes.Keyboard.geometry}
+      //       material={materials["Keyboard 1"]}
+      //     />
+      //     <mesh
+      //       geometry={nodes.Touch_Panel.geometry}
+      //       material={materials["Touch Bar"]}
+      //     />
+      //     <mesh geometry={nodes.Ports.geometry} material={materials.Ports} />
+      //     <mesh
+      //       geometry={nodes.Touchpad.geometry}
+      //       material={materials.Touchpad}
+      //     />
+      //     <mesh geometry={nodes.Body.geometry} material={materials["Body 1"]} />
+      //   </group>
+      // </group>;

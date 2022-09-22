@@ -1,10 +1,12 @@
 // /stories/pages/home.stories.jsx
 
+import { arraySlice } from "three/src/animation/AnimationUtils";
 import Laptop from "../../components/3dmodels/laptop/";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css";
 
-const slider = { control: { type: "range", min: -10, max: 20, step: 0.1 } };
+const slider = { control: { type: "range", min: -50, max: 50, step: 0.5 } };
+const rotate = { control: { type: "range", min: 1, max: 360, step: 1 } };
 
 export default {
   title: "3dmodels/laptop",
@@ -17,6 +19,7 @@ export default {
     modelPosX: slider,
     modelPosY: slider,
     modelPosZ: slider,
+    xRotate:rotate,
   },
 };
 
@@ -33,6 +36,7 @@ const Template = (args) => (
           modelPosX={args.modelPosX}
           modelPosY={args.modelPosY}
           modelPosZ={args.modelPosZ}
+          xRotate={args.xRotate}
         />
       </ShowModel>
     </div>
@@ -45,8 +49,9 @@ LaptopPreview.args = {
   camPosY: 0,
   camPosZ: 30,
   modelPosX: 0,
-  modelPosY: -0.9,
+  modelPosY: 0,
   modelPosZ: 0,
+  xRotate:0
 };
 
 //Using

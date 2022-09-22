@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 
 
   
-  export default  function Model({ modelPosX, modelPosY, modelPosZ}) {
+  export default  function Model({ modelPosX, modelPosY, modelPosZ, xRotate}) {
     const group = useRef();
 
     const { nodes, materials } = useGLTF("/models/laptop/laptop-7.glb");
@@ -12,7 +12,9 @@ import { useGLTF } from "@react-three/drei";
     return (
       <group ref={group} dispose={null}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-          <group scale={3.37}>
+          <group    scale={3.37} 
+                    rotation={[(xRotate * Math.PI) / 180, 0, 0]}
+                    position={[modelPosX,modelPosY,modelPosZ]}>
             <mesh
               geometry={nodes.Screen.geometry}
               material={materials["Screen 1"]}
