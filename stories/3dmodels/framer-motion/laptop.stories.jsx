@@ -63,8 +63,33 @@ function Laptop({ modelPosX, modelPosY, modelPosZ, isOpen}) {
     const { nodes, materials } = useGLTF("/models/laptop/laptop-test.glb");
     //Closed position for laptop is  rotation={[(105 * Math.PI) / 180, 0, 0]}  position={[0, 108,- 67]}
     const variants = {
-      open: { rotateX: (1 * Math.PI) / 180, x: 0, y: 0, z: 0},
-      closed: { rotateX: (105 * Math.PI) / 180, x: 0, y: 108, z: -67 },
+      open: {
+        rotateX: [
+          (105 * Math.PI) / 180,
+          (100 * Math.PI) / 180,
+          (90 * Math.PI) / 180,
+          (45 * Math.PI) / 180,
+          (20 * Math.PI) / 180,
+          (1 * Math.PI) / 180,
+        ],
+        x: 0,
+        y: [105, 89, 33, 8, 0],
+        z: [-70, -75, -53, -30, 0],
+      },
+      initial: { rotateX: (105 * Math.PI) / 180, x: 0, y: 108, z: -67 },
+      closed: {
+        rotateX: [
+          (1 * Math.PI) / 180,
+          (20 * Math.PI) / 180,
+          (45 * Math.PI) / 180,
+          (90 * Math.PI) / 180,
+          (100 * Math.PI) / 180,
+          (105 * Math.PI) / 180,
+        ],
+        x: 0,
+        y: [0, 8, 33, 89, 105],
+        z: [0, -30, -53, -75, -70],
+      },
     };
  
     return (
@@ -77,10 +102,10 @@ function Laptop({ modelPosX, modelPosY, modelPosZ, isOpen}) {
           <motion.group
             scale={3.37}
             // animate={{ rotateX: (105 * Math.PI) / 180 , x:0, y:108, z:-67 }}
-            initial={"closed"}
+            initial={"initial"}
             animate={isOpen ? "open" : "closed"}
             variants={variants}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
             <mesh
               geometry={nodes.Screen.geometry}
