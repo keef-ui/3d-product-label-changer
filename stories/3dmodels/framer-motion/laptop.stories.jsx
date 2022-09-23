@@ -66,29 +66,27 @@ function Laptop({ modelPosX, modelPosY, modelPosZ, isOpen}) {
       open: {
         rotateX: [
           (105 * Math.PI) / 180,
-          (100 * Math.PI) / 180,
-          (90 * Math.PI) / 180,
-          (45 * Math.PI) / 180,
-          (20 * Math.PI) / 180,
+          (70 * Math.PI) / 180,
+
           (1 * Math.PI) / 180,
         ],
         x: 0,
-        y: [105, 89, 33, 8, 0],
-        z: [-70, -75, -53, -30, 0],
+        y: [105, 55, 0],
+        z: [-70,  -75,  0],
       },
       initial: { rotateX: (105 * Math.PI) / 180, x: 0, y: 108, z: -67 },
       closed: {
         rotateX: [
           (1 * Math.PI) / 180,
-          (20 * Math.PI) / 180,
-          (45 * Math.PI) / 180,
-          (90 * Math.PI) / 180,
-          (100 * Math.PI) / 180,
+          
+       
+          (70 * Math.PI) / 180,
+          
           (105 * Math.PI) / 180,
         ],
         x: 0,
-        y: [0, 8, 33, 89, 105],
-        z: [0, -30, -53, -75, -70],
+        y: [0, 33, 105],
+        z: [0, -75, -70],
       },
     };
  
@@ -105,7 +103,7 @@ function Laptop({ modelPosX, modelPosY, modelPosZ, isOpen}) {
             initial={"initial"}
             animate={isOpen ? "open" : "closed"}
             variants={variants}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 3 }}
           >
             <mesh
               geometry={nodes.Screen.geometry}
