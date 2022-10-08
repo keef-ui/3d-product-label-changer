@@ -1,9 +1,10 @@
 // /stories/pages/home.stories.jsx
 
 import { arraySlice } from "three/src/animation/AnimationUtils";
-import Laptop, {LaptopYT} from "../../components/3dmodels/laptop/";
+import Laptop, {LaptopYT,LaptopGold} from "../../components/3dmodels/laptop/";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css";
+import { Environment } from "@react-three/drei";
 
 const slider = { control: { type: "range", min: -50, max: 50, step: 0.5 } };
 const rotate = { control: { type: "range", min: 1, max: 360, step: 1 } };
@@ -11,7 +12,7 @@ const rotate = { control: { type: "range", min: 1, max: 360, step: 1 } };
 export default {
   title: "3dmodels/laptop",
   component: ShowModel,
-  subcomponents: { Laptop, LaptopYT },
+  subcomponents: { Laptop, LaptopYT,LaptopGold },
   argTypes: {
     camPosX: slider,
     camPosY: slider,
@@ -25,40 +26,62 @@ export default {
 
 const Template = (args) => (
   <>
-  <div className="main">
-    <div className="preview">
-      <ShowModel
-        camPosX={args.camPosX}
-        camPosY={args.camPosY}
-        camPosZ={args.camPosZ}
-        camPosition={args.camPosition}
-      >
-        <Laptop
-          modelPosX={args.modelPosX}
-          modelPosY={args.modelPosY}
-          modelPosZ={args.modelPosZ}
-          xRotate={args.xRotate}
-        />
-      </ShowModel>
-    </div>
-  </div>
     <div className="main">
-    <div className="preview">
-      <ShowModel
-        camPosX={args.camPosX}
-        camPosY={args.camPosY}
-        camPosZ={args.camPosZ}
-        camPosition={args.camPosition}
-      >
-        <LaptopYT
-          modelPosX={args.modelPosX}
-          modelPosY={args.modelPosY}
-          modelPosZ={args.modelPosZ}
-          xRotate={args.xRotate}
-        />
-      </ShowModel>
+      <div className="preview">
+        <ShowModel
+          camPosX={args.camPosX}
+          camPosY={args.camPosY}
+          camPosZ={args.camPosZ}
+          camPosition={args.camPosition}
+        >
+          <Laptop
+            modelPosX={args.modelPosX}
+            modelPosY={args.modelPosY}
+            modelPosZ={args.modelPosZ}
+            xRotate={args.xRotate}
+          />
+        </ShowModel>
+      </div>
     </div>
-  </div>
+    <div className="main">
+      <div className="preview">
+        <ShowModel
+          camPosX={args.camPosX}
+          camPosY={args.camPosY}
+          camPosZ={args.camPosZ}
+          camPosition={args.camPosition}
+        >
+          <LaptopYT
+            modelPosX={args.modelPosX}
+            modelPosY={args.modelPosY}
+            modelPosZ={args.modelPosZ}
+            xRotate={args.xRotate}
+          />
+        </ShowModel>
+      </div>
+    </div>
+    <div className="main">
+      <div className="preview">
+        <ShowModel
+          camPosX={args.camPosX}
+          camPosY={args.camPosY}
+          camPosZ={args.camPosZ}
+          camPosition={args.camPosition}
+        >
+          <LaptopGold
+            modelPosX={args.modelPosX}
+            modelPosY={args.modelPosY}
+            modelPosZ={args.modelPosZ}
+            xRotate={args.xRotate}
+          />
+          <Environment
+            frames={Infinity}
+            resolution={256}
+            preset={"apartment"}
+          />;
+        </ShowModel>
+      </div>
+    </div>
   </>
 );
 
