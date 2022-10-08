@@ -1,0 +1,110 @@
+/*  https: //stackoverflow.com/questions/60011164/how-to-change-the-size-of-a-css-toggle-switch-without-using-transform-scale* */
+/*TODO: Size in sm med,lrg, extra larg */
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.77em;
+  height: 2.125em;
+  font-size: 2.5rem
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 2.125em;
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2.05em;
+  width: 2.05em;
+  left: 0.03em;
+  bottom: 0.04em;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2da44e;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px#2da44e;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
+}
+
+
+/* OLD STUFF of refrence
+/* .switch {
+  position: relative;
+  display: inline-block;
+  width: 175px;
+  height: 102px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: lightgray;
+  transition: .4s;
+  border-radius: 47px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 95px;
+  width: 95px;
+  left: 4px;
+  bottom: 4px;
+
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #2da44e;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  transform: translateX(72px);
+} */

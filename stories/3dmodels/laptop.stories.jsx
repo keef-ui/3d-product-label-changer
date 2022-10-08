@@ -1,7 +1,7 @@
 // /stories/pages/home.stories.jsx
 
 import { arraySlice } from "three/src/animation/AnimationUtils";
-import Laptop from "../../components/3dmodels/laptop/";
+import Laptop, {LaptopYT} from "../../components/3dmodels/laptop/";
 import ShowModel from "../../components/3dmodels/show/show-model";
 import "../assets/styles.css";
 
@@ -11,7 +11,7 @@ const rotate = { control: { type: "range", min: 1, max: 360, step: 1 } };
 export default {
   title: "3dmodels/laptop",
   component: ShowModel,
-  subcomponents: { Laptop },
+  subcomponents: { Laptop, LaptopYT },
   argTypes: {
     camPosX: slider,
     camPosY: slider,
@@ -24,6 +24,7 @@ export default {
 };
 
 const Template = (args) => (
+  <>
   <div className="main">
     <div className="preview">
       <ShowModel
@@ -41,6 +42,24 @@ const Template = (args) => (
       </ShowModel>
     </div>
   </div>
+    <div className="main">
+    <div className="preview">
+      <ShowModel
+        camPosX={args.camPosX}
+        camPosY={args.camPosY}
+        camPosZ={args.camPosZ}
+        camPosition={args.camPosition}
+      >
+        <LaptopYT
+          modelPosX={args.modelPosX}
+          modelPosY={args.modelPosY}
+          modelPosZ={args.modelPosZ}
+          xRotate={args.xRotate}
+        />
+      </ShowModel>
+    </div>
+  </div>
+  </>
 );
 
 export const LaptopPreview = Template.bind({});
