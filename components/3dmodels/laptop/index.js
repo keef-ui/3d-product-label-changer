@@ -9,13 +9,28 @@ import { motion } from "framer-motion-3d";
     const group = useRef();
 
     const { nodes, materials } = useGLTF("/models/laptop/laptop-7.glb");
-    //Closed position for laptop is  rotation={[(105 * Math.PI) / 180, 0, 0]}  position={[0, 108,- 67]}
+    //TODO: Change laptop to GOLD set follwoing:
+
+    // console.log(materials["Body 1"]);
+
+    //  materials["Body 1"].color.set("#b09040");
+    //  materials["Body 1"].metalness = 1;
+    //  materials["Body 1"].roughness = 0;
+    // Then add folloing to scene
+          // <Environment
+          //   frames={Infinity}
+          //   resolution={256}
+          //   preset={"apartment"}
+          // />;
+
     return (
       <group ref={group} dispose={null}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-          <group    scale={3.37} 
-                    rotation={[(xRotate * Math.PI) / 180, 0, 0]}
-                    position={[modelPosX,modelPosY,modelPosZ]}>
+          <group
+            scale={3.37}
+            rotation={[(xRotate * Math.PI) / 180, 0, 0]}
+            position={[modelPosX, modelPosY, modelPosZ]}
+          >
             <mesh
               geometry={nodes.Screen.geometry}
               material={materials["Screen 1"]}
@@ -63,6 +78,7 @@ import { motion } from "framer-motion-3d";
       open: { rotateX: (0 * Math.PI) / 180, x: -0.03, y: 111.69, z: 2.84 },
       closed: { rotateX: (105 * Math.PI) / 180, x: 0, y: 75, z: 39 },
     };
+
     return (
       <group {...props} dispose={null} position={[-0.03, -1, 0]}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
@@ -125,6 +141,18 @@ export function LaptopMotionYT({ isOpen, ...props }) {
     open: { rotateX: (0 * Math.PI) / 180, x: -0.03, y: 111.69, z: 2.84 },
     closed: { rotateX: (105 * Math.PI) / 180, x: 0, y: 75, z: 39 },
   };
+
+  // To change latop to gold change following:
+  // console.log(materials);
+
+  //  materials["Body 2"].color.set("#b09040");
+  //  materials["Body 2"].metalness = 1;
+  //  materials["Body 2"].roughness = 0;
+
+  //   materials["Body 3"].color.set("#b09040");
+  //   materials["Body 3"].metalness = 1;
+  //   materials["Body 3"].roughness = 0;
+
   return (
     <group {...props} dispose={null} position={[-0.03, -1, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>

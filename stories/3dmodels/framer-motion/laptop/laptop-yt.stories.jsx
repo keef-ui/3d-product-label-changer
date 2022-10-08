@@ -1,7 +1,7 @@
 import ShowModel from "../../../../components/3dmodels/show/show-model";
 import "../../../assets/laptop.css";
 import React, { useEffect, useRef, useState } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Environment } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 import { ToggleSwitch } from "../../../../components/ui/toggle-switch/ToggleSwitch";
 import Laptopx, {LaptopMotionYT as Laptop} from "../../../../components/3dmodels/laptop/";
@@ -28,7 +28,7 @@ const Template = (args) => {
   
   return (
     <div className="container">
-      <div className="preview" >
+      <div className="preview">
         <ShowModel
           camPosX={args.camPosX}
           camPosY={args.camPosY}
@@ -41,6 +41,11 @@ const Template = (args) => {
             modelPosZ={args.modelPosZ}
             isOpen={isOpen}
             set={setIsOpen}
+          />
+          <Environment
+            frames={Infinity}
+            resolution={256}
+            preset={"apartment"}
           />
         </ShowModel>
       </div>
