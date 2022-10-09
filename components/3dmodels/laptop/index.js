@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useMemo} from "react";
 import { useGLTF } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 
@@ -78,18 +78,21 @@ import { motion } from "framer-motion-3d";
       open: { rotateX: (0 * Math.PI) / 180, x: -0.03, y: 111.69, z: 2.84 },
       closed: { rotateX: (105 * Math.PI) / 180, x: 0, y: 75, z: 39 },
     };
-    //  materials["Body 2"].color.set("#b09040");
-    //  materials["Body 2"].metalness = 1;
-    //  materials["Body 2"].roughness = 0;
+      //  materials["Body 2"].color.set("#b09040");
+  //  materials["Body 2"].metalness = 1;
+  //  materials["Body 2"].roughness = 0;
 
-    //   materials["Body 3"].color.set("#b09040");
-    //   materials["Body 3"].metalness = 1;
-    //   materials["Body 3"].roughness = 0;
+  //   materials["Body 3"].color.set("#b09040");
+  //   materials["Body 3"].metalness = 1;
+  //   materials["Body 3"].roughness = 0;
 
     return (
       <group {...props} dispose={null} position={[-0.03, -1, 0]}>
         <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-          <group position={[-0.03, 111.69, 2.84]} scale={3.37}>
+          <group
+            position={[-0.03, 111.69, 2.84]}
+            scale={3.37}
+          >
             <mesh
               geometry={nodes.Screen.geometry}
               material={materials.Namibia}
@@ -224,22 +227,23 @@ export function LaptopGold({ isOpen, ...props }) {
   // To change latop to gold change following:
   // console.log(materials);
 
-   materials["Body 2"].color.set("#b09040");
-   materials["Body 2"].metalness = 1;
-   materials["Body 2"].roughness = 0;
+  const newMaterial1 = useMemo(()=>materials["Body 2"].clone());
+  const newMaterial2 = useMemo(() => materials["Body 3"].clone());
 
-    materials["Body 3"].color.set("#b09040");
-    materials["Body 3"].metalness = 1;
-    materials["Body 3"].roughness = 0;
+   newMaterial1.color.set("#b09040");
+   newMaterial1.metalness = 1;
+   newMaterial1.roughness = 0;
+
+    newMaterial2.color.set("#b09040");
+    newMaterial2.metalness = 1;
+    newMaterial2.roughness = 0;
+
+    console.log(newMaterial1);
 
   return (
     <group {...props} dispose={null} position={[-0.03, -1, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.03}>
-        <motion.group
-          position={[-0.03, 111.69, 2.84]}
-          scale={3.37}
-       
-        >
+        <motion.group position={[-0.03, 111.69, 2.84]} scale={3.37}>
           <mesh
             geometry={nodes.Screen.geometry}
             material={materials.Namibia}
@@ -260,7 +264,7 @@ export function LaptopGold({ isOpen, ...props }) {
           />
           <mesh
             geometry={nodes.Screen_Back.geometry}
-            material={materials["Body 2"]}
+            material={newMaterial1}
             position={[0.01, -33.13, -0.84]}
             scale={0.3}
           />
@@ -278,7 +282,7 @@ export function LaptopGold({ isOpen, ...props }) {
           geometry={nodes.Touchpad.geometry}
           material={materials["Touchpad 1"]}
         />
-        <mesh geometry={nodes.Body.geometry} material={materials["Body 3"]} />
+        <mesh geometry={nodes.Body.geometry} material={newMaterial2} />
       </group>
     </group>
   );

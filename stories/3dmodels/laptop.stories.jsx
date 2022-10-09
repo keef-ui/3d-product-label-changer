@@ -78,7 +78,7 @@ const Template = (args) => (
             frames={Infinity}
             resolution={256}
             preset={"apartment"}
-          />;
+          />
         </ShowModel>
       </div>
     </div>
