@@ -57,7 +57,7 @@
 
 
 
-.switch {
+/* .switch {
     position: relative;
     display: inline-block;
     width: 175px;
@@ -89,7 +89,6 @@
     width: 95px;
     left: 4px;
     bottom: 4px;
-    /* background-color: #bccddc; */
     background-color: white;
     transition: .4s;
     border-radius: 50%;
@@ -106,4 +105,4 @@ input:focus+.slider {
 input:checked+.slider:before {
     transform: translateX(72px);
 }
-
+ */

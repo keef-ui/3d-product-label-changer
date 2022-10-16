@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 
 
-
+//Alternative laop model https://codesandbox.io/s/m1-scrollcontrols-4m0d0?file=/src/App.js
   
   export default  function Model({ modelPosX, modelPosY, modelPosZ, xRotate}) {
     const group = useRef();
@@ -227,18 +227,21 @@ export function LaptopGold({ isOpen, ...props }) {
   // To change latop to gold change following:
   // console.log(materials);
 
-  const newMaterial1 = useMemo(()=>materials["Body 2"].clone());
+  const newMaterial1 = useMemo(() => materials["Body 2"].clone());
   const newMaterial2 = useMemo(() => materials["Body 3"].clone());
 
-   newMaterial1.color.set("#b09040");
-   newMaterial1.metalness = 1;
-   newMaterial1.roughness = 0;
+  newMaterial1.color.set("#b09040");
+  newMaterial1.metalness = 1;
+  newMaterial1.roughness = 0;
 
-    newMaterial2.color.set("#b09040");
-    newMaterial2.metalness = 1;
-    newMaterial2.roughness = 0;
+  newMaterial2.color.set("#b09040");
+  newMaterial2.metalness = 1;
+  newMaterial2.roughness = 0;
 
-    console.log(newMaterial1);
+  console.log(newMaterial1);
+
+  // silver :#c0c0c0 : M:100      R:5
+  // Gold    :#b09040
 
   return (
     <group {...props} dispose={null} position={[-0.03, -1, 0]}>
