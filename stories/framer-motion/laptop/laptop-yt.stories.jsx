@@ -1,10 +1,10 @@
-import ShowModel from "../../../../components/3dmodels/show/show-model";
-import "../../../assets/laptop.css";
+import ShowModel from "../../../components/3dmodels/show/show-model";
+import "../../assets/laptop.css";
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF, Environment } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
-import { ToggleSwitch } from "../../../../components/ui/toggle-switch/ToggleSwitch";
-import Laptopx, {LaptopMotionYT as Laptop} from "../../../../components/3dmodels/laptop/";
+import { ToggleSwitch } from "../../../components/ui/toggle-switch/ToggleSwitch";
+import Laptopx, {LaptopMotionYT as Laptop} from "../../../components/3dmodels/laptop/";
 
 
 const slider = { control: { type: "range", min: -10, max: 20, step: 0.1 } };
